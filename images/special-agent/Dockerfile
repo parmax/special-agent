@@ -1,7 +1,7 @@
 FROM docker:latest
 LABEL maintainer "Maxim Parkhomenko <psma@parmax.kiev.ua>"
-LABEL SOURCE "https://github.com/parmax/special-agent"
-LABEL branch "master"
+LABEL SOURCE "https://github.com/parmax/special-agent/main/images/special-agent"
+LABEL branch "main"
 
 COPY setup.sh /dist/
 
