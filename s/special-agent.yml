@@ -1,5 +1,5 @@
 special-agent:
-  image: registry.00.net.ua/parmax/special-agent
+  image: parmax/special-agent
   privileged: true
   labels:
     io.rancher.os.scope: "system"
