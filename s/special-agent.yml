@@ -1,22 +1,26 @@
 special-agent:
   image: registry.00.net.ua/parmax/special-agent
   command: ./dist/setup.sh
-  privileged: "true"
+  privileged: true
   labels:
-    io.rancher.os.scope: "system"
+    io.rancher.os.scope: system
     io.rancher.os.detach: "false"
-    io.rancher.os.before: "docker"
-    io.rancher.os.after: "console"
-  environment:
-    - HTTP_PROXY
-    - HTTPS_PROXY
-    - NO_PROXY
+    io.rancher.os.before: docker
+    io.rancher.os.after: console
   volumes:
-    - /mnt:/mnt
-    - /run/cryptsetup:/run/cryptsetup
-    - /var/lib/rancher:/var/lib/rancher
-  volumes_from:
-    - all-volumes
+    - /dev:/host/dev
+    - /lib/modules:/lib/modules
+    - /usr/bin/ros:/usr/bin/ros:ro
+    - /usr/bin/system-docker:/usr/bin/system-docker:ro
+    - /usr/bin/system-docker-runc:/usr/bin/system-docker-runc:ro
+    - /lib/firmware:/lib/firmware
+    - /lib/modules:/lib/modules
+    - /usr/share/ros:/usr/share/ros:ro
+    - /var/lib/rancher:/var/lib/rancher:ro
+    - /run:/run
+    - /var/log:/var/log
+    - /var/run:/var/run
+    - /mnt:/mnt:shared
   pid: host
   ipc: host
   net: host
