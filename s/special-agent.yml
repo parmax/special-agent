@@ -8,9 +8,12 @@ special-agent:
     io.rancher.os.after: console,network
   volumes:
     - /mnt:/mnt
+    - /run/cryptsetup:/run/cryptsetup
     - /var/lib/rancher:/var/lib/rancher
   volumes_from:
-    - all-volumes
+    - command-volumes
+    - system-volumes
+    - container-data-volumes
   pid: host
   ipc: host
   net: host
