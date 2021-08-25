@@ -1,14 +1,9 @@
-FROM gcc:7.4.0
+FROM docker:latest
 LABEL maintainer "Maxim Parkhomenko <psma@parmax.kiev.ua>"
 LABEL SOURCE "https://github.com/parmax/special-agent/main/images/special-agent"
 LABEL branch "main"
 
-RUN apt-get update \
-    && apt-get install -yq --no-install-recommends \
-        libssl-dev libmount-dev \
-        kmod \
-        parted lsscsi ksh curl git \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache coreutils
 
 WORKDIR /dist
 
