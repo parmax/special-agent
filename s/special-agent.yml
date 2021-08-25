@@ -25,3 +25,6 @@ special-agent:
   ipc: host
   net: host
   uts: host
+docker:
+  labels:
+    io.rancher.os.after: special-agent
