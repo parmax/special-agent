@@ -11,7 +11,6 @@ special-agent:
     - /mnt:/mnt
     - /run/cryptsetup:/run/cryptsetup
     - /var/lib/rancher:/var/lib/rancher
-    - /usr/bin/ros:/usr/bin/ros
   volumes_from:
     - command-volumes
     - system-volumes
