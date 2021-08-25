@@ -30,7 +30,7 @@ system-docker exec console ls -l /sbin/cryptsetup
 log 'Checking integrity of system…'
 
 if [ ! -f /mnt/crypt/docker ]; then
-    system-docker exec console echo "VerySecuredPassword" | /sbin/cryptsetup open /dev/sda2 crypt -d -
+    system-docker exec console echo -en "VerySecuredPassword" | /sbin/cryptsetup open /dev/sda2 crypt -d -
     system-docker exec console mount /dev/mapper/crypt /mnt/crypt
 fi
 
