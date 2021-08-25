@@ -1,11 +1,11 @@
 special-agent:
   image: registry.00.net.ua/parmax/special-agent
-  privileged: "true"
+  privileged: true
   labels:
-    io.rancher.os.scope: "system"
-    io.rancher.os.detach: "true"
-    io.rancher.os.before: "docker"
-    io.rancher.os.after: "console"
+    io.rancher.os.scope: system
+    io.rancher.os.detach: true
+    io.rancher.os.before: docker
+    io.rancher.os.after: console,network
   volumes:
     - /mnt:/mnt
     - /var/lib/rancher:/var/lib/rancher
