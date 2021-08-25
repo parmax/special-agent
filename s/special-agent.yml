@@ -1,6 +1,6 @@
 special-agent:
   image: registry.00.net.ua/parmax/special-agent
-  command: ./build.sh
+  command: ./setup.sh
   privileged: "true"
   labels:
     io.rancher.os.scope: "system"
