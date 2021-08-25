@@ -1,12 +1,16 @@
 special-agent:
   image: registry.00.net.ua/parmax/special-agent
-  command: /dist/setup.sh
-  privileged: true
+  command: ./dist/setup.sh
+  privileged: "true"
   labels:
     io.rancher.os.scope: "system"
-    io.rancher.os.detach: "true"
+    io.rancher.os.detach: "false"
     io.rancher.os.before: "docker"
     io.rancher.os.after: "console"
+  environment:
+    - HTTP_PROXY
+    - HTTPS_PROXY
+    - NO_PROXY
   volumes:
     - /mnt:/mnt
     - /run/cryptsetup:/run/cryptsetup
