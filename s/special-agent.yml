@@ -3,13 +3,14 @@ special-agent:
   privileged: true
   labels:
     io.rancher.os.scope: system
-    io.rancher.os.detach: true
+    io.rancher.os.detach: false
     io.rancher.os.before: docker
     io.rancher.os.after: console
   volumes:
     - /mnt:/mnt
     - /run/cryptsetup:/run/cryptsetup
     - /var/lib/rancher:/var/lib/rancher
+    - /usr/bin/ros:/usr/bin/ros
   volumes_from:
     - command-volumes
     - system-volumes
