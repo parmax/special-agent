@@ -1,7 +1,7 @@
 special-agent:
   image: registry.00.net.ua/parmax/special-agent
-  command: "/dist/setup.sh"
-  privileged: "true"
+  command: /dist/setup.sh
+  privileged: true
   labels:
     io.rancher.os.scope: "system"
     io.rancher.os.detach: "true"
@@ -12,9 +12,7 @@ special-agent:
     - /run/cryptsetup:/run/cryptsetup
     - /var/lib/rancher:/var/lib/rancher
   volumes_from:
-    - command-volumes
-    - system-volumes
-    - container-data-volumes
+    - all-volumes
   pid: host
   ipc: host
   net: host
