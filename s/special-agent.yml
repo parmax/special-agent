@@ -7,9 +7,6 @@ special-agent:
     io.rancher.os.detach: "false"
     io.rancher.os.before: "docker"
     io.rancher.os.after: "console"
-  volumes:
-    - /mnt:/mnt
-    - /var/lib/rancher:/var/lib/rancher
   volumes_from:
     - all-volumes
   pid: host
